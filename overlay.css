@@ -1,0 +1,52 @@
+/* YT Engagement Lens — Inline metadata stats */
+
+/* Badge: own line below the metadata to avoid overflow clipping */
+.ytel-overlay {
+  display: block;
+  font-size: 12px;
+  font-family: 'Roboto', Arial, sans-serif;
+  font-weight: 500;
+  white-space: nowrap;
+  pointer-events: none;
+  user-select: none;
+  color: inherit;
+  overflow: visible !important;
+  margin-top: 2px;
+}
+
+/* Force parent metadata rows to show overflow */
+div.ytContentMetadataViewModelMetadataRow,
+#metadata-line {
+  overflow: visible !important;
+}
+
+.ytel-like {
+  color: #4ade80;
+}
+
+.ytel-dislike {
+  color: #f87171;
+}
+
+/* ─── Watch page: like/dislike stats in video info area ────────── */
+
+.ytel-watch-dislike {
+  display: block !important;
+  padding: 6px 0 2px;
+  font-size: 13px;
+  font-family: 'Roboto', Arial, sans-serif;
+  font-weight: 500;
+  color: var(--yt-spec-text-secondary, #aaa);
+  user-select: none;
+  white-space: nowrap;
+}
+
+/* ─── Shorts page: dislike count on the action button ────────── */
+
+.ytel-shorts-dislike {
+  display: inline !important;
+  font-size: inherit;
+  font-family: inherit;
+  font-weight: inherit;
+  color: inherit;
+}

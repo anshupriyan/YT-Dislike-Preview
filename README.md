@@ -39,7 +39,7 @@ Since this extension is in active development:
 
 1.  **Clone this repository:**
     ```bash
-    git clone https://github.com/anshupriyan/yt-engagement-lens.git
+    git clone https://github.com/anshupriyan/YT-Dislike-Preview.git
     ```
 2.  Open Google Chrome and navigate to `chrome://extensions/`.
 3.  Enable **Developer mode** (toggle in the top-right corner).

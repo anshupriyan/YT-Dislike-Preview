@@ -13,8 +13,8 @@
 ---
 
 <div align="center">
-  <img width="358" height="362" alt="image" src="https://github.com/user-attachments/assets/d9f7b77d-7518-4a00-9c79-5b0dfead7b46" />
-  <img width="502" height="402" alt="image" src="https://github.com/user-attachments/assets/ab1c8726-28d5-4893-8477-2de42f002466" />
+  <img width="258" height="262" alt="image" src="https://github.com/user-attachments/assets/d9f7b77d-7518-4a00-9c79-5b0dfead7b46" />
+  <img width="402" height="302" alt="image" src="https://github.com/user-attachments/assets/ab1c8726-28d5-4893-8477-2de42f002466" />
 
 
 </div>
@@ -33,9 +33,12 @@ In 2021, YouTube made the controversial decision to hide public dislike counts, 
 *   **Zero Configuration:** Start instantly. The extension works out-of-the-box using the public API, requiring no personal API keys or setups.
 *   **Lightweight & Privacy-First:** Built entirely on vanilla JavaScript and CSS to minimize browser memory footprint, featuring a fully security-hardened Manifest V3 codebase.
 
-<img width="485" height="357" alt="image" src="https://github.com/user-attachments/assets/d06ca981-60c1-4fd8-8aff-593fc1291ece" /><img width="306" height="328" alt="image" src="https://github.com/user-attachments/assets/f8ba38c6-35c3-4a28-9305-69f5939a5c6e" />
+<div align="center">
+  <img width="485" height="357" alt="image" src="https://github.com/user-attachments/assets/d06ca981-60c1-4fd8-8aff-593fc1291ece" />
+  <img width="306" height="328" alt="image" src="https://github.com/user-attachments/assets/f8ba38c6-35c3-4a28-9305-69f5939a5c6e" />
 
 
+</div>
 ---
 
 ## 🛠️ Installation (Developer Mode)

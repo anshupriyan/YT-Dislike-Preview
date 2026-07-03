@@ -16,12 +16,12 @@ Since this extension is not yet on the Chrome Web Store, you can load it locally
 
 1.  **Clone the repository:**
     ```bash
-    git clone https://github.com/anshupriyan/browser_extension.git
+    git clone https://github.com/anshupriyan/YT-Dislike-Preview.git
     ```
 2.  Open Chrome and navigate to `chrome://extensions/`.
 3.  Enable **Developer mode** (toggle in the top-right corner).
 4.  Click **Load unpacked** in the top-left corner.
-5.  Select the `browser_extension` folder containing the `manifest.json` file.
+5.  Select the `YT-Dislike-Preview` folder containing the `manifest.json` file.
 
 ## ⚙️ How It Works
 

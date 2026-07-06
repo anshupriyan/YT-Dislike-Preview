@@ -29,8 +29,12 @@
   <img width="306" height="328" alt="image" src="https://github.com/user-attachments/assets/f8ba38c6-35c3-4a28-9305-69f5939a5c6e" />
 </div>
 
-## 🛠️ Installation (Developer Mode)
+## 📥 Installation
 
+### 🌐 Chrome Web Store
+You can install the extension directly from the [Chrome Web Store](https://chromewebstore.google.com/detail/yt-dislike-preview/ngejddpgnbelgdlbncnmneoodhpgfefd).
+
+### 🛠️ Developer Mode (Manual Installation)
 To load the extension locally during development:
 
 1. **Clone this repository:**

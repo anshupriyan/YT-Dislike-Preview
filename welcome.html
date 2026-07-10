@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Welcome to YouTube Dislike Preview</title>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0f0f11;
+      --surface: #1a1a1f;
+      --border: rgba(255,255,255,0.08);
+      --accent: #a78bfa;
+      --accent2: #38bdf8;
+      --green: #4ade80;
+      --red: #f87171;
+      --text: #e2e8f0;
+      --muted: #64748b;
+      --radius: 16px;
+      --btn-bg: linear-gradient(135deg, #a78bfa 0%, #7c3aed 100%);
+      --btn-hover: linear-gradient(135deg, #b59dfb 0%, #8b5cf6 100%);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background: radial-gradient(circle at top left, #1c1035 0%, #0f0f11 60%),
+                  radial-gradient(circle at bottom right, #0a1b29 0%, #0f0f11 80%);
+      color: var(--text);
+      font-family: 'Outfit', sans-serif;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 20px;
+      overflow-x: hidden;
+    }
+
+    .container {
+      max-width: 600px;
+      width: 100%;
+      background: rgba(26, 26, 31, 0.7);
+      backdrop-filter: blur(16px);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 40px;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+      text-align: center;
+      animation: fadeIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 28px;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .logo {
+      width: 64px;
+      height: 64px;
+      border-radius: 14px;
+      box-shadow: 0 0 24px rgba(255, 0, 0, 0.4);
+      animation: bounce 3s infinite ease-in-out;
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-6px); }
+    }
+
+    h1 {
+      font-size: 28px;
+      font-weight: 800;
+      background: linear-gradient(90deg, #ffffff, #e2e8f0, var(--accent2));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      line-height: 1.25;
+      margin-top: 8px;
+    }
+
+    .intro {
+      font-size: 15px;
+      color: var(--muted);
+      max-width: 480px;
+      line-height: 1.6;
+    }
+
+    .setup-box {
+      width: 100%;
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 24px;
+      text-align: left;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .setup-title {
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 4px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .steps-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .step-item {
+      display: flex;
+      gap: 12px;
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    .step-number {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      background: rgba(167, 139, 250, 0.15);
+      color: var(--accent);
+      font-weight: 700;
+      font-size: 12px;
+      flex-shrink: 0;
+    }
+
+    .step-text {
+      color: #cbd5e1;
+    }
+
+    .step-text strong {
+      color: #fff;
+    }
+
+    /* CSS Browser Mockup */
+    .mockup-container {
+      width: 100%;
+      background: #141416;
+      border: 1px solid rgba(255,255,255,0.05);
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+      margin-top: 4px;
+    }
+
+    .mockup-header {
+      background: #1e1e24;
+      padding: 8px 12px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+    }
+
+    .mockup-dots {
+      display: flex;
+      gap: 6px;
+    }
+
+    .mockup-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.2);
+    }
+
+    .mockup-address-bar {
+      flex-grow: 1;
+      max-width: 60%;
+      height: 18px;
+      background: rgba(0, 0, 0, 0.2);
+      border-radius: 99px;
+      margin: 0 16px;
+    }
+
+    .mockup-toolbar-icons {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      position: relative;
+    }
+
+    .puzzle-icon-wrapper {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 24px;
+      height: 24px;
+      border-radius: 4px;
+      background: rgba(167, 139, 250, 0.2);
+      border: 1px solid var(--accent);
+    }
+
+    .puzzle-icon {
+      width: 14px;
+      height: 14px;
+      fill: var(--accent);
+    }
+
+    .pointer-arrow {
+      position: absolute;
+      top: 30px;
+      right: 0px;
+      width: 24px;
+      height: 24px;
+      fill: var(--accent);
+      animation: pointUpDown 1.2s infinite ease-in-out;
+      z-index: 10;
+    }
+
+    @keyframes pointUpDown {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(6px); }
+    }
+
+    .mockup-dropdown {
+      background: #1e1e24;
+      border-top: 1px solid rgba(255,255,255,0.05);
+      padding: 12px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .dropdown-title {
+      font-size: 10px;
+      font-weight: 700;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 4px;
+    }
+
+    .extension-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 8px;
+      background: rgba(167, 139, 250, 0.06);
+      border-radius: 6px;
+      border: 1px solid rgba(167, 139, 250, 0.2);
+    }
+
+    .ext-info {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 13px;
+    }
+
+    .ext-icon-img {
+      width: 18px;
+      height: 18px;
+      border-radius: 4px;
+    }
+
+    .ext-name {
+      font-weight: 500;
+      color: #fff;
+    }
+
+    .ext-actions {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .pin-icon-btn {
+      width: 20px;
+      height: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 4px;
+      background: var(--accent2);
+      box-shadow: 0 0 8px rgba(56, 189, 248, 0.4);
+    }
+
+    .pin-icon {
+      width: 12px;
+      height: 12px;
+      fill: #000;
+    }
+
+    .btn-container {
+      width: 100%;
+      margin-top: 8px;
+    }
+
+    .cta-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      padding: 16px 32px;
+      background: var(--btn-bg);
+      border: none;
+      border-radius: 12px;
+      color: #fff;
+      font-family: 'Outfit', sans-serif;
+      font-size: 16px;
+      font-weight: 700;
+      text-decoration: none;
+      cursor: pointer;
+      box-shadow: 0 8px 20px rgba(124, 58, 237, 0.3);
+      transition: all 0.2s ease;
+    }
+
+    .cta-btn:hover {
+      background: var(--btn-hover);
+      transform: translateY(-2px);
+      box-shadow: 0 12px 24px rgba(124, 58, 237, 0.45);
+    }
+
+    .cta-btn:active {
+      transform: translateY(0);
+    }
+
+    .cta-btn svg {
+      margin-left: 8px;
+      width: 18px;
+      height: 18px;
+      transition: transform 0.2s ease;
+    }
+
+    .cta-btn:hover svg {
+      transform: translateX(4px);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <img src="assets/logo.png" alt="YouTube Dislike Preview" class="logo">
+
+    <div>
+      <h1>Thanks for installing YouTube Dislike Preview!</h1>
+      <p class="intro">We appreciate your support. YouTube dislikes will now automatically display on all video thumbnail previews!</p>
+    </div>
+
+    <div class="setup-box">
+      <div class="setup-title">
+        <span>📌</span> Pin the extension so you never lose it:
+      </div>
+      
+      <div class="steps-list">
+        <div class="step-item">
+          <div class="step-number">1</div>
+          <div class="step-text">Click the <strong>puzzle-piece icon</strong> in the top-right of Chrome.</div>
+        </div>
+        <div class="step-item">
+          <div class="step-number">2</div>
+          <div class="step-text">Find <strong>YouTube Dislike Preview</strong> in the list.</div>
+        </div>
+        <div class="step-item">
+          <div class="step-number">3</div>
+          <div class="step-text">Click the <strong>pin icon</strong> next to it.</div>
+        </div>
+      </div>
+
+      <div class="mockup-container">
+        <!-- Mock header bar -->
+        <div class="mockup-header">
+          <div class="mockup-dots">
+            <div class="mockup-dot"></div>
+            <div class="mockup-dot"></div>
+            <div class="mockup-dot"></div>
+          </div>
+          <div class="mockup-address-bar"></div>
+          <div class="mockup-toolbar-icons">
+            <div class="puzzle-icon-wrapper">
+              <svg class="puzzle-icon" viewBox="0 0 24 24">
+                <path d="M20.5 11H19V7c0-1.1-.9-2-2-2h-4V3.5C13 2.12 11.88 1 10.5 1S8 2.12 8 3.5V5H4c-1.1 0-2 .9-2 2v4h1.5C4.88 11 6 12.12 6 13.5S4.88 16 3.5 16H2v4c0 1.1.9 2 2 2h4v-1.5c0-1.38 1.12-2.5 2.5-2.5s2.5 1.12 2.5 2.5V22h4c1.1 0 2-.9 2-2v-4h1.5c1.38 0 2.5-1.12 2.5-2.5S21.88 11 20.5 11z"/>
+              </svg>
+            </div>
+            <!-- Pointer Arrow pointing to puzzle icon -->
+            <svg class="pointer-arrow" viewBox="0 0 24 24">
+              <path d="M4 12l1.41 1.41L11 7.83V20h2V7.83l5.58 5.59L20 12l-8-8-8 8z"/>
+            </svg>
+          </div>
+        </div>
+        <!-- Mock extension list dropdown -->
+        <div class="mockup-dropdown">
+          <div class="dropdown-title">Extensions</div>
+          
+          <div class="extension-row">
+            <div class="ext-info">
+              <img src="assets/logo.png" alt="YouTube Dislike Preview" class="ext-icon-img">
+              <span class="ext-name">YouTube Dislike Preview</span>
+            </div>
+            <div class="ext-actions">
+              <div class="pin-icon-btn">
+                <svg class="pin-icon" viewBox="0 0 24 24">
+                  <path d="M16 12V4h1V2H7v2h1v8l-2 2v2h5.2v6h1.6v-6H18v-2z"/>
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="btn-container">
+      <button id="goToYoutube" class="cta-btn">
+        Go to YouTube
+        <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewBox="0 0 24 24">
+          <path d="M5 12h14M12 5l7 7-7 7"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <script src="welcome.js"></script>
+</body>
+</html>

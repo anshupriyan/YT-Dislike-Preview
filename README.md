@@ -1,6 +1,6 @@
 <div align="center">
-  <img src="assets/logo.png" alt="YT Dislike Preview Logo" width="80" height="80" style="border-radius: 16px;" />
-  <h1>YT Dislike Preview</h1>
+  <img src="assets/logo.png" alt="YouTube Dislike Preview Logo" width="80" height="80" style="border-radius: 16px;" />
+  <h1>YouTube Dislike Preview</h1>
   <p><strong>A lightweight Chrome Extension (Manifest V3) that displays like/dislike counts and ratios for YouTube videos.</strong></p>
 
   [![License: MIT](https://img.shields.io/badge/License-MIT-red.svg)](https://opensource.org/licenses/MIT)
